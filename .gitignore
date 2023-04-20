@@ -2,3 +2,4 @@
 .nrepl-port
 dev-resources/public/phosphor/js
 target
+/phosphor.jar
