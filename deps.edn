@@ -10,4 +10,7 @@
     figwheel-sidecar/figwheel-sidecar {:mvn/version "0.5.17"}
     hickory/hickory {:mvn/version "0.7.1"}
     no.cjohansen/portfolio {:mvn/version "2023.04.20"}
-    cjohansen/dumdom {:mvn/version "2023.03.27"}}}}}
+    cjohansen/dumdom {:mvn/version "2023.03.27"}}}
+  :jar {:extra-deps {pack/pack.alpha {:git/url "https://github.com/juxt/pack.alpha.git"
+                                      :sha "e518d9b2b70f4292c9988d2792b8667d88a6f4df"}}
+        :main-opts ["-m" "mach.pack.alpha.skinny" "--no-libs" "--project-path" "phosphor.jar"]}}}

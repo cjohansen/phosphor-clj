@@ -10,4 +10,10 @@ target/phosphor-icons: target/phosphor-icons.zip
 update-icons: target/phosphor-icons
 	clojure -M:dev -m phosphor.icons target/phosphor-icons/2.0.0/SVGs
 
-.PHONY: update-icons
+phosphor.jar: src/phosphor/*
+	rm -f phosphor.jar && clojure -A:dev -M:jar
+
+deploy: phosphor.jar
+	mvn deploy:deploy-file -Dfile=phosphor.jar -DrepositoryId=clojars -Durl=https://clojars.org/repo -DpomFile=pom.xml
+
+.PHONY: update-icons deploy
