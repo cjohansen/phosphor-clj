@@ -1,0 +1,1 @@
+[:svg {:xmlns "http://www.w3.org/2000/svg", :viewBox "0 0 256 256"} [:rect {:width "256", :height "256", :fill "none"}] [:rect {:y "48", :rx "8", :stroke "currentColor", :fill "none", :stroke-linejoin "round", :width "192", :stroke-linecap "round", :stroke-width "24", :x "32", :height "160"}] [:circle {:cx "76", :cy "92", :r "16"}] [:circle {:cx "124", :cy "92", :r "16"}]]
