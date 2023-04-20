@@ -5,6 +5,38 @@
 
 (def base-path "phosphor-icons/2.0.0")
 
+(defmacro icon [id]
+  `(do
+     (phosphor.icons/load-icon!
+      ~id
+      ~(-> (str base-path "/"
+                (str/replace (namespace id) #"^phosphor\." "") "/"
+                (name id) ".edn")
+           io/resource
+           slurp
+           read-string))
+     ~id))
+
+(defn get-icon-ids* []
+  (->> (io/resource base-path)
+       io/file
+       file-seq
+       (map str)
+       (filter #(re-find #"\.edn$" %))
+       (map #(second (str/split % (re-pattern (str base-path "/")))))
+       (map #(let [[style id] (str/split % #"/")]
+               (keyword (str "phosphor." style) (str/replace id #"\.edn$" ""))))
+       sort
+       vec))
+
+(defmacro get-icon-ids []
+  (get-icon-ids*))
+
+(defmacro load-all-icons []
+  (apply list
+         'do
+         (for [id (get-icon-ids*)]
+           (list 'phosphor.icons/icon id))))
 
 (defn to-hiccup [markup]
   (-> markup

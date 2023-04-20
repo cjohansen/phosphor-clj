@@ -6,8 +6,8 @@
    {org.clojure/clojure {:mvn/version "1.11.1"}
     org.clojure/clojurescript {:mvn/version "1.11.60"}
     cider/piggieback {:mvn/version "0.4.1"}
-    com.bhauman/figwheel-main {:mvn/version "0.2.14"}
-    com.bhauman/rebel-readline-cljs {:mvn/version "0.1.4"}
+    com.bhauman/figwheel-main {:mvn/version "0.2.18"}
     figwheel-sidecar/figwheel-sidecar {:mvn/version "0.5.17"}
     hickory/hickory {:mvn/version "0.7.1"}
-    no.cjohansen/portfolio {:mvn/version "2023.04.20"}}}}}
+    no.cjohansen/portfolio {:mvn/version "2023.04.20"}
+    cjohansen/dumdom {:mvn/version "2023.03.27"}}}}}

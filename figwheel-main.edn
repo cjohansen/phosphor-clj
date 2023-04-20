@@ -1,0 +1,3 @@
+{:watch-dirs ["src" "dev"]
+ :ring-server-options {:port 6996}
+ :open-url false}

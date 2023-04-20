@@ -1,0 +1,7 @@
+{:main phosphor.dev
+ :optimizations :none
+ :pretty-print true
+ :source-map true
+ :asset-path "/phosphor/js/dev"
+ :output-to "dev-resources/public/phosphor/js/app.js"
+ :output-dir "dev-resources/public/phosphor/js/dev"}
