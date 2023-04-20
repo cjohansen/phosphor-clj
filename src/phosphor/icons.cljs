@@ -9,12 +9,12 @@
 (defn get-loaded-icons []
   (keys @icons))
 
-(defn render [icon & [{:keys [size color style]}]]
-  (if-let [svg (get @icons icon)]
+(defn render [id & [{:keys [size color style]}]]
+  (if-let [svg (get @icons id)]
     (assoc-in svg [1 :style] (cond-> {:display "inline-block"
                                       :line-height "1"}
                                size (assoc :height size)
                                size (assoc :width size)
                                color (assoc :color color)
                                style (into style)))
-    (throw (js/Error. (str "Icon " icon " is not loaded. Try loading it with `load-icon!`, or check that it exists.")))))
+    (throw (js/Error. (str "Icon " id " is not loaded. Try loading it with `load-icon!`, or check that it exists.")))))

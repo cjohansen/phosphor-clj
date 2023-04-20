@@ -3,18 +3,36 @@
             [clojure.string :as str]
             [hickory.core :as hiccup]))
 
+(render :phosphor.regular/x)
+
 (def base-path "phosphor-icons/2.0.0")
+
+(defn get-icon-path [id]
+  (str base-path "/"
+       (str/replace (namespace id) #"^phosphor\." "") "/"
+       (name id) ".edn"))
+
+(defn load-icon-resource* [id]
+  (-> (get-icon-path id)
+      io/resource
+      slurp
+      read-string))
+
+(def load-icon-resource (memoize load-icon-resource*))
+
+(defn render [id & [{:keys [size color style]}]]
+  (if-let [svg (load-icon-resource id)]
+    (assoc-in svg [1 :style] (cond-> {:display "inline-block"
+                                      :line-height "1"}
+                               size (assoc :height size)
+                               size (assoc :width size)
+                               color (assoc :color color)
+                               style (into style)))
+    (throw (Error. (str "Icon " id " does not exist")))))
 
 (defmacro icon [id]
   `(do
-     (phosphor.icons/load-icon!
-      ~id
-      ~(-> (str base-path "/"
-                (str/replace (namespace id) #"^phosphor\." "") "/"
-                (name id) ".edn")
-           io/resource
-           slurp
-           read-string))
+     (phosphor.icons/load-icon! ~id ~(load-icon-resource* id))
      ~id))
 
 (defn get-icon-ids* []
