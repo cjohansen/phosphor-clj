@@ -4,7 +4,7 @@
   <packaging>jar</packaging>
   <groupId>no.cjohansen</groupId>
   <artifactId>phosphor-clj</artifactId>
-  <version>2023.04.21</version>
+  <version>2023.04.25</version>
   <name>phosphor-clj</name>
   <build>
     <sourceDirectory>src</sourceDirectory>
@@ -26,7 +26,7 @@
   <scm>
     <connection>scm:git:git://github.com/cjohansen/phosphor-clj.git</connection>
     <developerConnection>scm:git:ssh://git@github.com/cjohansen/phosphor-clj.git</developerConnection>
-    <tag>v2023.04.21</tag>
+    <tag>v2023.04.25</tag>
     <url>https://github.com/cjohansen/phosphor-clj</url>
   </scm>
 </project>
