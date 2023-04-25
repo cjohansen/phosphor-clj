@@ -20,7 +20,9 @@
   (ensure-dir! (.getParent (io/file path))))
 
 (defn convert-icon [base-dir out-dir path]
-  (let [target (str out-dir "/" (str/replace path #"\.svg$" ".edn"))
+  (let [style (first (re-find #"^([^/]+)" path))
+        out-path (str/replace path (re-pattern (str "-" style ".svg")) ".svg")
+        target (str out-dir "/" (str/replace out-path #"\.svg$" ".edn"))
         hiccup (cond-> (to-hiccup (slurp (str base-dir "/" path)))
                  (re-find #"fill\/" path) (assoc-in [1 :fill] "currentColor"))]
     (ensure-parent-dir! target)
