@@ -17,14 +17,16 @@
 
 (def load-icon-resource (memoize load-icon-resource*))
 
-(defn render [id & [{:keys [size color style]}]]
+(defn render [id & [{:keys [size color style] :as attrs}]]
   (if-let [svg (load-icon-resource id)]
-    (assoc-in svg [1 :style] (cond-> {:display "inline-block"
+    (-> svg
+        (assoc-in [1 :style] (cond-> {:display "inline-block"
                                       :line-height "1"}
                                size (assoc :height size)
                                size (assoc :width size)
                                color (assoc :color color)
                                style (into style)))
+        (update 1 merge (dissoc attrs :size :color :style)))
     (throw (Error. (str "Icon " id " does not exist")))))
 
 (defmacro icon [id]

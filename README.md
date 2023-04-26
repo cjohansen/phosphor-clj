@@ -132,7 +132,22 @@ All the map options are optional.
 - `color` is the icon's color. Icons use `currentColor`, so you can also set
   color with CSS in parent elements.
 - `style` is a map of styles for the `svg` element
-- `class` is either a compatible format for specifying CSS classes that your rendering library supports (usually either an array of strings or a space-separated list)
+- `class` is either a compatible format for specifying CSS classes that your
+  rendering library supports (usually either an array of strings or a
+  space-separated list)
+
+The remaining map is merged into the SVG element's attributes, e.g.:
+
+```clj
+(require '[phosphor.icons :as icons])
+
+(icons/render (icons/icon :phosphor.regular/x) {:on-click (fn [e] ,,,)})
+
+;;=> [:svg {:on-click (fn [e] ,,,)
+;;          :viewBox ",,,"
+;;          ,,,}
+;;    ,,,]
+```
 
 ## License
 
