@@ -123,7 +123,7 @@ website](https://phosphoricons.com/) to find icons.
 The render function takes two arguments:
 
 ```clj
-(render id {:size color style})
+(render id {:size :color :style :class})
 ```
 
 All the map options are optional.
@@ -132,6 +132,7 @@ All the map options are optional.
 - `color` is the icon's color. Icons use `currentColor`, so you can also set
   color with CSS in parent elements.
 - `style` is a map of styles for the `svg` element
+- `class` is either a compatible format for specifying CSS classes that your rendering library supports (usually either an array of strings or a space-separated list)
 
 ## License
 
