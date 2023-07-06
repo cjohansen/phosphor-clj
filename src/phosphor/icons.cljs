@@ -16,7 +16,7 @@
                                       :line-height "1"}
                                size (assoc :height size)
                                size (assoc :width size)
-                               color (assoc :color color)
+                               color (assoc :color color :fill color)
                                style (into style)))
         (update 1 merge (dissoc attrs :size :color :style)))
     (throw (js/Error. (str "Icon " id " is not loaded. Try loading it with `load-icon!`, or check that it exists.")))))
