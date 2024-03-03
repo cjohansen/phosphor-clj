@@ -9,13 +9,13 @@ ClojureScript.
 With tools.deps:
 
 ```clj
-no.cjohansen/phosphor-clj {:mvn/version "2023.07.07"}
+no.cjohansen/phosphor-clj {:mvn/version "2024.03.03"}
 ```
 
 With Leiningen:
 
 ```clj
-[no.cjohansen/phosphor-clj "2023.07.07"]
+[no.cjohansen/phosphor-clj "2024.03.03"]
 ```
 
 ## Usage from Clojure
