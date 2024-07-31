@@ -149,9 +149,28 @@ The remaining map is merged into the SVG element's attributes, e.g.:
 ;;    ,,,]
 ```
 
+## Updating icons
+
+Occasionally, the Phosphor package adds or updates icons. When that happens, the
+icons must be re-imported into phosphor-clj and a new version cut (since
+phosphor-clj distributes the icons in its jar):
+
+```sh
+make update-icons
+```
+
+Then cut a new release by manually updating the version number in pom.xml and
+the Readme, and run:
+
+```sh
+make deploy
+```
+
+This requires access to the Clojars repo.
+
 ## License
 
-Copyright code in this repo © 2023 Christian Johansen
+Copyright code in this repo © 2023-2024 Christian Johansen
 
 Distributed under the MIT license.
 
