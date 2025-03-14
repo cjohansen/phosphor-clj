@@ -2,7 +2,7 @@
   (:require [clojure.java.io :as io]
             [clojure.string :as str]))
 
-(def base-path "phosphor-icons/2.0.0")
+(def base-path "phosphor-icons/2.1.0")
 
 (defn get-icon-path [id]
   (str base-path "/"
