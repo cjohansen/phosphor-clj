@@ -9,13 +9,13 @@ ClojureScript.
 With tools.deps:
 
 ```clj
-no.cjohansen/phosphor-clj {:mvn/version "2024.07.31"}
+no.cjohansen/phosphor-clj {:mvn/version "2025.03.14"}
 ```
 
 With Leiningen:
 
 ```clj
-[no.cjohansen/phosphor-clj "2024.07.31"]
+[no.cjohansen/phosphor-clj "2025.03.14"]
 ```
 
 ## Usage from Clojure
@@ -168,9 +168,19 @@ make deploy
 
 This requires access to the Clojars repo.
 
+## Changelog
+
+### 2025.03.14
+
+Breaking change: `phosphor.icons/render` no longer defaults to rendering icons
+with `display: inline-block; line-height: 1;`. This was a mistake that breaks
+text alignment. This change should not impact you if you are already taking
+control of icon styling in your app. If you happen to rely on the old faulty
+behavior, use `phosphor.legacy/render`, which behaves exactly like before.
+
 ## License
 
-Copyright code in this repo © 2023-2024 Christian Johansen
+Copyright code in this repo © 2023-2025 Christian Johansen
 
 Distributed under the MIT license.
 

@@ -13,10 +13,9 @@
   (if-let [svg (get @icons id)]
     (let [color (or color "currentColor")]
       (-> svg
-          (assoc-in [1 :style] (cond-> {:display "inline-block"
-                                        :line-height "1"
-                                        :color color
-                                        :fill color}
+          (assoc-in [1 :style] (cond-> {}
+                                 color (assoc :color color)
+                                 color (assoc :fill color)
                                  size (assoc :height size)
                                  size (assoc :width size)
                                  style (into style)))
