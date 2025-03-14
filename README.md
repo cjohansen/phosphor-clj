@@ -172,6 +172,8 @@ This requires access to the Clojars repo.
 
 ### 2025.03.14
 
+Update to Phosphor Icons 2.1.0
+
 Breaking change: `phosphor.icons/render` no longer defaults to rendering icons
 with `display: inline-block; line-height: 1;`. This was a mistake that breaks
 text alignment. This change should not impact you if you are already taking
