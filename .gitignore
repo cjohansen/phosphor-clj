@@ -3,3 +3,5 @@
 dev-resources/public/phosphor/js
 target
 /phosphor.jar
+/.clj-kondo/
+/.lsp/

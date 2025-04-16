@@ -6,7 +6,8 @@
   (phosphor/get-loaded-icons))
 
 (def ^:no-doc old-defaults {:display "inline-block"
-                            :line-height "1"})
+                            :line-height "1"
+                            :color "currentColor"})
 
 (defn render [id & [attrs]]
   (phosphor/render id (update attrs :style #(merge old-defaults %))))

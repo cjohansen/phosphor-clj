@@ -9,13 +9,13 @@ ClojureScript.
 With tools.deps:
 
 ```clj
-no.cjohansen/phosphor-clj {:mvn/version "2025.03.14"}
+no.cjohansen/phosphor-clj {:mvn/version "2025.04.16"}
 ```
 
 With Leiningen:
 
 ```clj
-[no.cjohansen/phosphor-clj "2025.03.14"]
+[no.cjohansen/phosphor-clj "2025.04.16"]
 ```
 
 ## Usage from Clojure
@@ -169,6 +169,14 @@ make deploy
 This requires access to the Clojars repo.
 
 ## Changelog
+
+### 2025.04.16
+
+Breaking bug fix: `phosphor.icons/render` no longer defaults `:color` to
+`"currentColor"` in CloureScript. This is unnecessary (it's the browser's
+default behavior), makes overriden color with CSS much harder, and was
+inconsistent between Clojure and ClojureScript -- only the latter applied the
+default.
 
 ### 2025.03.14
 
